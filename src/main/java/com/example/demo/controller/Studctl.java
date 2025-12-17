@@ -13,54 +13,24 @@ import com.example.demo.services.StudeService;
 @RestController
 @RequestMapping("/student")
 public class Studctl {
-
     @Autowired
     StudeService ser;
-
-
-
-
-
-
-
-    @PostMapping("/add")
-
-    public Studentity addStudent(@RequestBody Studentity st) {
-
-        return ser.saveData(st);
-
-        }
-
-
-
-
-
-        @GetMapping("/{id}")
-
-        public Studentity getStudent(@PathVariable int id) {
-
-            return ser.getById(id);
-
-        }
-
-        @GetMapping("/all")
-
-        public Collection<Studentity> getAllStudents() {
-
-            return ser.getAll();
-
-            }
-
-            @PutMapping("/update/{id}")
-
-            public Studentity updateStudent(@PathVariable int id, @RequestBody Studentity st) {
-
-                Studentity updated = ser.updateStudent(id, st);
-
-                if(updated != null) {
-
-                    return updated;
-
+ @PostMapping("/add")
+ public Studentity addStudent(@RequestBody Studentity st) {
+ return ser.saveData(st);
+  }
+  @GetMapping("/{id}")
+public Studentity getStudent(@PathVariable int id) {
+return ser.getById(id);
+ }
+  @GetMapping("/all")
+ public Collection<Studentity> getAllStudents() {
+ return ser.getAll();
+ }  @PutMapping("/update/{id}")
+   public Studentity updateStudent(@PathVariable int id, @RequestBody Studentity st) {
+ Studentity updated = ser.updateStudent(id, st);
+ if(updated != null) {
+ return updated;
                     } else {
 
                         throw new RuntimeException("Student with ID " + id + " not found");
@@ -73,8 +43,4 @@ public class Studctl {
 
                     }
                    
-            }
-        }
-        }
-    }
-}
+           
