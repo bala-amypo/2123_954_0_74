@@ -7,14 +7,8 @@ import com.example.demo.entity.Studentity;
 @Service
 public class StudeService {
     private Map<Integer, Studentity> details = new HashMap<>();
-
-
-
-
-
     public Studentity saveData(Studentity st) {
-
-        details.put(st.getId(), st);
+      details.put(st.getId(), st);
 
         return st;
 
@@ -55,9 +49,5 @@ public class StudeService {
         }
 
         return null;
-
     }
-
-
-
 }
